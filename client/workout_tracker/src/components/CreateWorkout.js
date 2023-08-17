@@ -4,9 +4,9 @@ import { fetchworkouts, createWorkout, updateWorkoutAPI, deleteWorkoutAPI } from
 
 const CreateWorkout = () => {
     const dispatch = useDispatch();
-    const [title, setTitle] = useState(null)
-    const [reps, setReps] = useState(null)
-    const [load, setLoad] = useState(null)
+    const [title, setTitle] = useState('')
+    const [reps, setReps] = useState('')
+    const [load, setLoad] = useState('')
 
 
     function submitHandler(e){
@@ -25,7 +25,7 @@ const CreateWorkout = () => {
     }
      
   return (
-    <div>
+    <div className='my-5' >
         <form onSubmit={submitHandler}>
             <span>Title</span>
             <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" />

@@ -5,7 +5,7 @@ const workoutSlice = createSlice({
     initialState: [],
     reducers: {
         addWorkout: (state,action) => {
-            state.push(action.payload)
+            state.unshift(action.payload)
         },
         updateWorkout: (state,action) => {
             const { id, title, reps, load } = action.payload
@@ -25,6 +25,6 @@ const workoutSlice = createSlice({
     }
 })
 console.log(workoutSlice)
-export const { addWorkout, updateWorkout, deleteWorkout, setWorkout } = workoutSlice.actions
+export const { addWorkout, updateWorkout, deleteWorkout, setWorkout, singleWorkout } = workoutSlice.actions
 
 export default workoutSlice.reducer

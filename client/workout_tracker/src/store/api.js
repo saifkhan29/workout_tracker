@@ -3,6 +3,7 @@ import {
   deleteWorkout,
   updateWorkout,
   setWorkout,
+  singleWorkout
 } from "./workoutSlice";
 
 const API_BASE_URL = "/api/workouts";
@@ -20,6 +21,8 @@ export const fetchworkouts = () => {
     }
   };
 };
+
+
 
 //creating a workout 
 export const createWorkout = workout => async dispatch => {
@@ -41,7 +44,7 @@ export const createWorkout = workout => async dispatch => {
   export const updateWorkoutAPI = (id, updatedworkout) => async dispatch => {
     try {
       await fetch(`${API_BASE_URL}/${id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
